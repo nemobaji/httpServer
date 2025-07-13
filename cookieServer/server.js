@@ -14,7 +14,7 @@ const cookieServer = http.createServer(async (req, res) => {
   const cookies = parseCookies(req.headers.cookie); // { mycookie: 'test' }
   // If the URL starts with /login
   if (req.url.startsWith('/login')) {
-    const url = new URL(req.url, 'http://localhost:8084');
+    const url = new URL(req.url, 'http://localhost:8080');
     const name = url.searchParams.get('name');
     const expires = new Date();
     // Set the cookie expiration time to the current time plus 5 minutes
